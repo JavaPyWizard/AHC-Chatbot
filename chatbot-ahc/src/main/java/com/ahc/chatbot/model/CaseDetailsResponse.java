@@ -1,0 +1,1 @@
+// map the response received from the external API

@@ -1,0 +1,1 @@
+// manage the chatbot’s current conversation state
