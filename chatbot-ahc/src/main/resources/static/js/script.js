@@ -1,5 +1,4 @@
 let caseTypes = [];
-let currentScreen = "main";
 
 const chatBody = document.getElementById("chatBody");
 const themeBtn = document.getElementById("themeBtn");
@@ -143,7 +142,6 @@ function handleOption(option) {
   addUserMessage(option);
 
   if (option === "Case Details") {
-    currentScreen = "caseDetails";
 
     addBotMessage("Do you have case details?");
 
@@ -525,142 +523,6 @@ function showResponse(data) {
         </button>
     `);
 }
-
-function viewMore(caseId) {
-  fetch("http://localhost:8080/api/view-more", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      caseId: caseId,
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-
-      let iaHtml = "<h3>IA Details</h3>";
-
-      if (data.iaDetails && data.iaDetails.length > 0) {
-        data.iaDetails.forEach((ia) => {
-          iaHtml += `
-                    <b>Filing No:</b>
-                    ${ia.FilingNo}
-                    <br>
-
-                    <b>Date:</b>
-                    ${ia.DateOfIAFiling}
-                    <br>
-
-                    <b>Status:</b>
-                    ${ia.Status}
-                    <br><br>
-                `;
-        });
-      } else {
-        iaHtml += `
-                No IA Details Available
-                <br><br>
-            `;
-      }
-
-      let listingHtml = "<h3>Listing History</h3>";
-
-      if (data.listingHistory && data.listingHistory.length > 0) {
-        data.listingHistory.slice(0, 10).forEach((listing) => {
-          listingHtml += `
-                        <b>Date:</b>
-                        ${listing.Listing_Date}
-                        <br>
-
-                        <b>Bench:</b>
-                        ${listing.Bench_Name}
-                        <br>
-
-                        <b>Court No:</b>
-                        ${listing.Court_No}
-                        <br>
-
-                        <b>Order:</b>
-                        ${listing.Order_name}
-                        <br><br>
-                    `;
-        });
-      } else {
-        listingHtml += `
-                No Listing History Available
-                <br><br>
-            `;
-      }
-
-      addBotMessage(`
-            <h3>Case Details</h3>
-
-            <b>Case Number:</b>
-            ${data.caseDetails.DisplayCaseno}
-            <br>
-
-            <b>Status:</b>
-            ${data.caseDetails.Status}
-            <br>
-
-            <b>Case Type:</b>
-            ${data.caseDetails.CaseType}
-            <br>
-
-            <b>District:</b>
-            ${data.caseDetails.District}
-            <br>
-
-            <b>Registration Date:</b>
-            ${data.caseDetails.CaseRegistrationDate}
-            <br>
-
-            <b>First Listing Date:</b>
-            ${data.caseDetails.FirstListingDate}
-            <br>
-
-            <b>Petitioner:</b>
-            ${data.caseDetails.PetName}
-            <br>
-
-            <b>Respondent:</b>
-            ${data.caseDetails.ResName}
-            <br><br>
-
-            <b>Petitioner Advocate:</b>
-            ${data.advocateDetails.PetAdvocate}
-            <br><br>
-
-            <b>Respondent Advocate:</b>
-            ${data.advocateDetails.ResAdvocate}
-
-            <br><br>
-
-            ${iaHtml}
-
-            <br><br>
-
-            ${listingHtml}
-
-            <br><br>
-
-            <button
-                class="option-btn"
-                onclick="restartChat()"
-            >
-                Back
-            </button>
-        `);
-    })
-    .catch((error) => {
-      console.error(error);
-
-      addBotMessage("❌ Unable to fetch detailed case information.");
-    });
-}
-
 function openViewMore(caseId) {
   window.location.href = "view-more.html?caseId=" + caseId;
 }

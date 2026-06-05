@@ -8,12 +8,11 @@ fetch("http://localhost:8080/api/view-more", {
     "Content-Type": "application/json",
   },
   body: JSON.stringify({
-    caseId: parseInt(caseId),
+    caseId: Number(caseId),
   }),
 })
   .then((response) => response.json())
   .then((data) => {
-    console.log(data);
 
     let lowerCourtHtml = `
 <h2>Lower Court Details</h2>
@@ -102,7 +101,7 @@ ${JSON.stringify(data.actDetails, null, 2)}
 
     <tr>
         <td>Case Number</td>
-        <td>${data.caseDetails.DisplayCaseno}</td>
+        <td>${data.caseDetails?.DisplayCaseno || "-"}</td>
     </tr>
 
     <tr>
