@@ -1,6 +1,0 @@
-com/ahc/chatbot/service/ChatbotService.class
-com/ahc/chatbot/model/ChatResponse.class
-com/ahc/chatbot/service/CaseApiService.class
-com/ahc/chatbot/model/ChatRequest.class
-com/ahc/chatbot/ChatbotApplication.class
-com/ahc/chatbot/controller/ChatbotController.class

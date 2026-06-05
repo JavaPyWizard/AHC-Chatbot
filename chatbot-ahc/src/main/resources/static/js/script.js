@@ -106,10 +106,10 @@ function generateCaseTypeDropdown(id = "caseType") {
 
   caseTypes.forEach((type) => {
     html += `
-            <option value="${type.value}">
-                ${type.text}
-            </option>
-        `;
+      <option value="${type.CaseType}">
+          ${type.FullForm}
+      </option>
+  `;
   });
 
   html += `
@@ -132,7 +132,7 @@ async function loadCaseTypes() {
 }
 
 function startChat() {
-  addBotMessage("👋 Welcome to Allahabad High Court");
+  addBotMessage("👋 Welcome to High Court of Judicature at Allahabad");
 
   addBotMessage("Please select a query.");
 
@@ -233,11 +233,9 @@ function showYesForm() {
     });
 
     const requestData = {
-      caseNumber: caseNumber,
-
-      filingYear: filingYear,
-
-      caseType: caseTypeId,
+      caseType: parseInt(caseTypeId),
+      caseNumber: parseInt(caseNumber),
+      caseYear: parseInt(filingYear),
     };
 
     searchCase(requestData);
@@ -424,49 +422,35 @@ function showDynamicForm() {
 
   scrollBottom();
 }
-// RESULT
-function displayResult() {
-  addBotMessage("🔍 Searching case details...");
 
-  setTimeout(() => {
-    addBotMessage(`
-            <strong>
-            ✅ Case Found
-            </strong>
-
-            <br><br>
-
-            Case Number:
-            123/2025
-
-            <br>
-
-            Petitioner:
-            ABC
-
-            <br>
-
-            Respondent:
-            XYZ
-
-            <br>
-
-            Status:
-            Pending
-
-            <br>
-
-            Next Hearing:
-            20-Jul-2026
-        `);
-
-    createButtons(["Another Query"]);
-  }, 1500);
-}
 // API
 async function searchCase(requestData) {
   try {
-    addBotMessage("🔍 Searching case details...");
+    const loader = document.createElement("div");
+
+    loader.className = "bot-message";
+
+    loader.id = "searchLoader";
+
+    loader.innerHTML = `
+    <div>
+        🔍 Searching case details
+    </div>
+
+    <div class="typing-loader">
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+    </div>
+`;
+
+    chatBody.appendChild(loader);
+
+    scrollBottom();
 
     const response = await fetch("http://localhost:8080/api/case-details", {
       method: "POST",
@@ -484,46 +468,203 @@ async function searchCase(requestData) {
 
     const data = await response.json();
 
+    document.getElementById("searchLoader")?.remove();
+
     showResponse(data);
   } catch (error) {
     console.error(error);
+
+    document.getElementById("searchLoader")?.remove();
 
     addBotMessage("❌ Unable to fetch case details.");
   }
 }
 
 function showResponse(data) {
+  if (data.caseId == 0 || data.caseNumber === "NOT FOUND" || !data.caseNumber) {
+    addBotMessage(`
+            ❌ No case found for the entered
+            Case Type, Case Number and Case Year.
+        `);
+
+    return;
+  }
+
   addBotMessage(`
-      <strong>✅ Case Found</strong>
+        <strong>✅ Case Found</strong>
 
-      <br><br>
+        <br><br>
 
-      Case Number:
-      ${data.caseNumber ?? "N/A"}
+        <strong>Case Number:</strong>
+        ${data.caseNumber}
 
-      <br>
+        <br><br>
 
-      Petitioner:
-      ${data.petitioner ?? "N/A"}
+        <strong>Party Name:</strong>
+        ${data.partyName}
 
-      <br>
+        <br><br>
 
-      Respondent:
-      ${data.respondent ?? "N/A"}
+        <strong>Status:</strong>
+        ${data.status}
 
-      <br>
+        <br><br>
 
-      Status:
-      ${data.status ?? "N/A"}
+        <button
+            class="option-btn"
+            onclick="openViewMore(${data.caseId})"
+        >
+            View More
+        </button>
 
-      <br>
-
-      Next Hearing:
-      ${data.nextHearingDate ?? "N/A"}
-  `);
-
-  createButtons(["Another Query"]);
+        <button
+            class="option-btn"
+            onclick="restartChat()"
+        >
+            Back
+        </button>
+    `);
 }
+
+function viewMore(caseId) {
+  fetch("http://localhost:8080/api/view-more", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      caseId: caseId,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      let iaHtml = "<h3>IA Details</h3>";
+
+      if (data.iaDetails && data.iaDetails.length > 0) {
+        data.iaDetails.forEach((ia) => {
+          iaHtml += `
+                    <b>Filing No:</b>
+                    ${ia.FilingNo}
+                    <br>
+
+                    <b>Date:</b>
+                    ${ia.DateOfIAFiling}
+                    <br>
+
+                    <b>Status:</b>
+                    ${ia.Status}
+                    <br><br>
+                `;
+        });
+      } else {
+        iaHtml += `
+                No IA Details Available
+                <br><br>
+            `;
+      }
+
+      let listingHtml = "<h3>Listing History</h3>";
+
+      if (data.listingHistory && data.listingHistory.length > 0) {
+        data.listingHistory.slice(0, 10).forEach((listing) => {
+          listingHtml += `
+                        <b>Date:</b>
+                        ${listing.Listing_Date}
+                        <br>
+
+                        <b>Bench:</b>
+                        ${listing.Bench_Name}
+                        <br>
+
+                        <b>Court No:</b>
+                        ${listing.Court_No}
+                        <br>
+
+                        <b>Order:</b>
+                        ${listing.Order_name}
+                        <br><br>
+                    `;
+        });
+      } else {
+        listingHtml += `
+                No Listing History Available
+                <br><br>
+            `;
+      }
+
+      addBotMessage(`
+            <h3>Case Details</h3>
+
+            <b>Case Number:</b>
+            ${data.caseDetails.DisplayCaseno}
+            <br>
+
+            <b>Status:</b>
+            ${data.caseDetails.Status}
+            <br>
+
+            <b>Case Type:</b>
+            ${data.caseDetails.CaseType}
+            <br>
+
+            <b>District:</b>
+            ${data.caseDetails.District}
+            <br>
+
+            <b>Registration Date:</b>
+            ${data.caseDetails.CaseRegistrationDate}
+            <br>
+
+            <b>First Listing Date:</b>
+            ${data.caseDetails.FirstListingDate}
+            <br>
+
+            <b>Petitioner:</b>
+            ${data.caseDetails.PetName}
+            <br>
+
+            <b>Respondent:</b>
+            ${data.caseDetails.ResName}
+            <br><br>
+
+            <b>Petitioner Advocate:</b>
+            ${data.advocateDetails.PetAdvocate}
+            <br><br>
+
+            <b>Respondent Advocate:</b>
+            ${data.advocateDetails.ResAdvocate}
+
+            <br><br>
+
+            ${iaHtml}
+
+            <br><br>
+
+            ${listingHtml}
+
+            <br><br>
+
+            <button
+                class="option-btn"
+                onclick="restartChat()"
+            >
+                Back
+            </button>
+        `);
+    })
+    .catch((error) => {
+      console.error(error);
+
+      addBotMessage("❌ Unable to fetch detailed case information.");
+    });
+}
+
+function openViewMore(caseId) {
+  window.location.href = "view-more.html?caseId=" + caseId;
+}
+
 // RESTART
 function restartChat() {
   selectedFields = [];

@@ -2,43 +2,133 @@
 
 package com.ahc.chatbot.service;
 
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.ahc.chatbot.model.CaseDetailsRequest;
+import com.ahc.chatbot.model.CaseDetailsResponse;
 import com.ahc.chatbot.model.ChatRequest;
 import com.ahc.chatbot.model.ChatResponse;
+import com.ahc.chatbot.model.ViewMoreResponse;
 
 @Service
 public class ChatbotService {
 
+    @Autowired
+    private CaseApiService caseApiService;
+
     public ChatResponse getCaseDetails(
             ChatRequest request) {
 
-        ChatResponse response =
-                new ChatResponse();
+        CaseDetailsRequest apiRequest =
+                new CaseDetailsRequest();
 
-        response.setCaseNumber(
-                request.getCaseNumber()
-        );
+        apiRequest.setCaseType(
+                request.getCaseType());
 
-        response.setStatus(
-                "Pending"
-        );
+        apiRequest.setCaseNumber(
+                request.getCaseNumber());
 
-        response.setPetitioner(
-                request.getPetitionerName() != null
-                        ? request.getPetitionerName()
-                        : "Not Provided"
-        );
+        apiRequest.setCaseYear(
+                request.getCaseYear());
 
-        response.setRespondent(
-                request.getRespondentName() != null
-                        ? request.getRespondentName()
-                        : "Not Provided"
-        );
+        try {
 
-        response.setNextHearingDate(
-                "20-Jul-2026"
-        );
+            CaseDetailsResponse apiResponse =
+                    caseApiService.getBriefCaseDetails(
+                            apiRequest);
+
+            ChatResponse response =
+                    new ChatResponse();
+
+            response.setCaseId(
+                    apiResponse.getCaseId());
+
+            response.setCaseNumber(
+                    apiResponse.getCaseNumber());
+
+            response.setPartyName(
+                    apiResponse.getPartyName());
+
+            response.setStatus(
+                    apiResponse.getStatus());
+
+            return response;
+
+        } catch (Exception e) {
+
+            System.out.println(
+                    "CASE NOT FOUND : "
+                            + e.getMessage());
+
+            ChatResponse response =
+                    new ChatResponse();
+
+            response.setCaseId(0L);
+
+            response.setCaseNumber(
+                    "NOT FOUND");
+
+            response.setPartyName(
+                    "No case found");
+
+            response.setStatus(
+                    "NOT FOUND");
+
+            return response;
+        }
+    }
+
+    public ViewMoreResponse getViewMoreDetails(
+            Long caseId) {
+
+        ViewMoreResponse response =
+                new ViewMoreResponse();
+
+        response.setCaseDetails(
+                caseApiService.getCaseDetailsByCaseId(
+                        caseId));
+
+        response.setPartyDetails(
+                caseApiService.getPartyDetailsByCaseId(
+                        caseId));
+
+        response.setAdvocateDetails(
+                caseApiService.getAdvocateDetailsByCaseId(
+                        caseId));
+
+        response.setIaDetails(
+                caseApiService.getIADetailsByCaseId(
+                        caseId));
+
+        response.setListingHistory(
+                caseApiService.getListingHistoryByCaseId(
+                        caseId));
+
+        response.setLowerCourtDetails(
+                caseApiService.getLowerCourtDetailByCaseId(
+                        caseId));
+
+        Map caseDetails =
+                (Map) response.getCaseDetails();
+
+        if (caseDetails != null) {
+
+            Object cinoObject =
+                    caseDetails.get("CINO");
+
+            if (cinoObject != null &&
+                    !cinoObject.toString()
+                            .trim()
+                            .isEmpty()) {
+
+                response.setActDetails(
+                        caseApiService.getActDetailsByCINO(
+                                cinoObject.toString()));
+            }
+        }
 
         return response;
     }

@@ -6,6 +6,9 @@ import com.ahc.chatbot.model.ChatRequest;
 import com.ahc.chatbot.model.ChatResponse;
 import com.ahc.chatbot.service.ChatbotService;
 
+import com.ahc.chatbot.model.ViewMoreRequest;
+import com.ahc.chatbot.model.ViewMoreResponse;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,11 +22,8 @@ public class ChatbotController {
 
     private final ChatbotService chatbotService;
 
-    public ChatbotController(
-            ChatbotService chatbotService) {
-
-        this.chatbotService =
-                chatbotService;
+    public ChatbotController(ChatbotService chatbotService) {
+        this.chatbotService = chatbotService;
     }
 
     @PostMapping("/case-details")
@@ -34,42 +34,32 @@ public class ChatbotController {
                 "===== REQUEST RECEIVED =====");
 
         System.out.println(
-                "Case Number: "
-                        + request.getCaseNumber());
-
-        System.out.println(
-                "Filing Year: "
-                        + request.getFilingYear());
-
-        System.out.println(
                 "Case Type: "
                         + request.getCaseType());
 
         System.out.println(
-                "Petitioner Name: "
-                        + request.getPetitionerName());
+                "Case Number: "
+                        + request.getCaseNumber());
 
         System.out.println(
-                "Respondent Name: "
-                        + request.getRespondentName());
+                "Case Year: "
+                        + request.getCaseYear());
 
-        System.out.println(
-                "Advocate Name: "
-                        + request.getAdvocateName());
-
-        System.out.println(
-                "Judge Name: "
-                        + request.getJudgeName());
-
-        System.out.println(
-                "Court Number: "
-                        + request.getCourtNumber());
-
-        System.out.println(
-                "District: "
-                        + request.getDistrict());
-
-        return chatbotService
-                .getCaseDetails(request);
+        return chatbotService.getCaseDetails(request);
     }
+
+    @PostMapping("/view-more")
+public ViewMoreResponse viewMore(
+        @RequestBody ViewMoreRequest request) {
+
+    System.out.println(
+            "===== VIEW MORE REQUEST =====");
+
+    System.out.println(
+            "Case Id: "
+                    + request.getCaseId());
+
+    return chatbotService.getViewMoreDetails(
+            request.getCaseId());
+}
 }

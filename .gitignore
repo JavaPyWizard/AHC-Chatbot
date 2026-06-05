@@ -1,0 +1,12 @@
+# Maven build artifacts
+**/target/
+**/classes/
+**/generated-sources/
+**/maven-status/
+# IDE / editor files
+.vscode/
+*.classpath
+*.project
+.settings/
+# OS files
+.DS_Store

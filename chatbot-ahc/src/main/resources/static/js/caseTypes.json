@@ -1,618 +1,243 @@
 [
+  { "CaseType": 90, "FullForm": "A227 - MATTERS UNDER ARTICLE 227" },
+  { "CaseType": 106, "FullForm": "A228 - MATTERS UNDER ARTICLE 228" },
   {
-    "value": "90",
-    "text": "A227 - MATTERS UNDER ARTICLE 227"
+    "CaseType": 123,
+    "FullForm": "A340 - Crl. Misc. APPLICATION U/s 340 Cr.P.C."
   },
+  { "CaseType": 102, "FullForm": "A372 - CRL. MISC. APPLICATION U/S 372" },
   {
-    "value": "106",
-    "text": "A228 - MATTERS UNDER ARTICLE 228"
+    "CaseType": 103,
+    "FullForm": "A372D - CRL. MISC. APPLICATION U/S 372 DEFECTIVE"
   },
+  { "CaseType": 15, "FullForm": "A378 - CRL. MISC. APPLICATION U/S 378" },
   {
-    "value": "123",
-    "text": "A340 - Crl. Misc. APPLICATION U/s 340 Cr.P.C."
+    "CaseType": 38,
+    "FullForm": "A378D - CRL. MISC. APPLICATION U/s 378 DEFECTIVE"
   },
+  { "CaseType": 112, "FullForm": "A389 - Crl. Misc. Application U/s 389(2)" },
+  { "CaseType": 17, "FullForm": "A482 - APPLICATION U/s 482" },
+  { "CaseType": 121, "FullForm": "A483 - APPLICATION U/s 483" },
   {
-    "value": "102",
-    "text": "A372 - CRL. MISC. APPLICATION U/S 372"
+    "CaseType": 127,
+    "FullForm": "ABAIL - CRIMINAL MISC ANTICIPATORY BAIL APPLICATION U/S 438 Cr.P.C."
   },
+  { "CaseType": 137, "FullForm": "ABAILC - ABAILC" },
+  { "CaseType": 50, "FullForm": "AMAL - AMALGAMATION ORDER" },
+  { "CaseType": 89, "FullForm": "APPL - APPL." },
+  { "CaseType": 40, "FullForm": "ARBT - CIVIL MISC. ARBITRATION APPLICATION" },
   {
-    "value": "103",
-    "text": "A372D - CRL. MISC. APPLICATION U/S 372 DEFECTIVE"
+    "CaseType": 41,
+    "FullForm": "ARCO - ARBITRATION and CONCILI. APPL.U/s11(4)"
   },
   {
-    "value": "15",
-    "text": "A378 - CRL. MISC. APPLICATION U/S 378"
+    "CaseType": 124,
+    "FullForm": "ARPL - APPEAL UNDER SECTION 37 OF ARBITRATION AND CONCILIATION ACT 1996"
   },
   {
-    "value": "38",
-    "text": "A378D - CRL. MISC. APPLICATION U/s 378 DEFECTIVE"
+    "CaseType": 126,
+    "FullForm": "ARPLD - APPEAL UNDER SECTION 37 OF ARBITRATION AND CONCILIATION ACT 1996 DEFECTIVE"
   },
+  { "CaseType": 16, "FullForm": "BAIL - CRIMINAL MISC. BAIL APPLICATION" },
   {
-    "value": "112",
-    "text": "A389 - Crl. Misc. Application U/s 389(2)"
+    "CaseType": 107,
+    "FullForm": "BAILC - CRIMINAL MISC. BAIL CANCELLATION APPL."
   },
   {
-    "value": "17",
-    "text": "A482 - APPLICATION U/s 482"
+    "CaseType": 151,
+    "FullForm": "C14A1 - Appeal against acquittal in SC/ST Act"
   },
   {
-    "value": "121",
-    "text": "A483 - APPLICATION U/s 483"
+    "CaseType": 152,
+    "FullForm": "C14A1D - Appeal against acquittal in SC/ST Act DEFECTIVE"
   },
+  { "CaseType": 100, "FullForm": "C372 - CRIMINAL APPEAL U/S 372 Cr.PC." },
+  {
+    "CaseType": 101,
+    "FullForm": "C372D - CRIMINAL APPEAL U/S 372 Cr.PC DEFECTIVE"
+  },
+  { "CaseType": 108, "FullForm": "C378 - CRIMINAL APPEAL U/S 378 CR.PC." },
+  {
+    "CaseType": 109,
+    "FullForm": "C378D - CRIMINAL APPEAL U/S 378 Cr.PC DEFECTIVE"
+  },
+  { "CaseType": 18, "FullForm": "CAPL - CONTEMPT APPLICATION (CIVIL)" },
+  { "CaseType": 51, "FullForm": "CAPT - CAPITAL CASES" },
+  { "CaseType": 83, "FullForm": "CAPTD - CAPITAL CASE DEFECTIVE" },
+  { "CaseType": 65, "FullForm": "CEAP - CENTRAL EXCISE REFERENCE APPLICATION" },
   {
-    "value": "127",
-    "text": "ABAIL - CRIMINAL MISC ANTICIPATORY BAIL APPLICATION U/S 438 Cr.P.C."
+    "CaseType": 66,
+    "FullForm": "CEAPD - CENTRAL EXCISE REFERENCE APPL. DEFECTIVE"
   },
+  { "CaseType": 84, "FullForm": "CERA - CENTRAL EXCISE REFERENCE APPLICATION" },
   {
-    "value": "137",
-    "text": "ABAILC - ABAILC"
+    "CaseType": 104,
+    "FullForm": "CERAD - CENTRAL EXCISE REFERENCE APPL. DEFECTIVE"
   },
+  { "CaseType": 59, "FullForm": "CERE - CENTRAL EXCISE REFERENCE" },
+  { "CaseType": 60, "FullForm": "CERED - CENTRAL EXCESE REFERENCE DEFECTIVE" },
+  { "CaseType": 74, "FullForm": "CEXA - CENTRAL EXCISE APPEAL" },
+  { "CaseType": 75, "FullForm": "CEXAD - CENTRAL EXCISE APPEAL DEFECTIVE" },
+  { "CaseType": 6, "FullForm": "CLRE - CIVIL REVISION" },
+  { "CaseType": 37, "FullForm": "CLRED - CIVIL REVISION DEFECTIVE" },
+  { "CaseType": 131, "FullForm": "CMRA - CIVIL MISC REVIEW APPLICATION" },
   {
-    "value": "50",
-    "text": "AMAL - AMALGAMATION ORDER"
+    "CaseType": 133,
+    "FullForm": "CMRAD - CIVIL MISC REVIEW APPLICATION DEFECTIVE"
   },
+  { "CaseType": 69, "FullForm": "COMA - COMPANY APPEAL" },
+  { "CaseType": 80, "FullForm": "COMAD - COMPANY APPEAL DEFECTIVE" },
+  { "CaseType": 11, "FullForm": "COMP - COMPANY APPLICATION" },
+  { "CaseType": 32, "FullForm": "CONA - CONTEMPT APPEAL" },
+  { "CaseType": 55, "FullForm": "CONAD - CONTEMPT APPEAL DEFECTIVE" },
+  { "CaseType": 153, "FullForm": "COPL - Commercial Appeal" },
+  { "CaseType": 154, "FullForm": "COPLD - Commercial Appeal DEFECTIVE" },
+  { "CaseType": 26, "FullForm": "COPP - COMPANY PETITION" },
+  { "CaseType": 29, "FullForm": "COSU - COMPANY ORIGINAL SUIT" },
+  { "CaseType": 28, "FullForm": "CRCL - CONTEMPT APPLICATION (CRIMINAL)" },
+  { "CaseType": 98, "FullForm": "CREF - CRIMINAL REFERENCE" },
+  { "CaseType": 99, "FullForm": "CREFD - CRIMINAL REFERENCE DEFECTIVE" },
+  { "CaseType": 13, "FullForm": "CRLA - CRIMINAL APPEAL" },
+  { "CaseType": 35, "FullForm": "CRLAD - CRIMINAL APPEAL DEFECTIVE" },
+  { "CaseType": 30, "FullForm": "CRLP - CRIMINAL MISC. WRIT PETITION" },
+  { "CaseType": 14, "FullForm": "CRLR - CRIMINAL REVISION" },
+  { "CaseType": 36, "FullForm": "CRLRD - CRIMINAL REVISION DEFECTIVE" },
+  { "CaseType": 119, "FullForm": "CROB - CROSS OBJECTION" },
   {
-    "value": "89",
-    "text": "APPL - APPL."
-  },
-  {
-    "value": "40",
-    "text": "ARBT - CIVIL MISC. ARBITRATION APPLICATION"
-  },
-  {
-    "value": "41",
-    "text": "ARCO - ARBITRATION and CONCILI. APPL.U/s11(4)"
-  },
-  {
-    "value": "124",
-    "text": "ARPL - APPEAL UNDER SECTION 37 OF ARBITRATION AND CONCILIATION ACT 1996"
-  },
-  {
-    "value": "126",
-    "text": "ARPLD - APPEAL UNDER SECTION 37 OF ARBITRATION AND CONCILIATION ACT 1996 DEFECTIVE"
-  },
-  {
-    "value": "16",
-    "text": "BAIL - CRIMINAL MISC. BAIL APPLICATION"
-  },
-  {
-    "value": "107",
-    "text": "BAILC - CRIMINAL MISC. BAIL CANCELLATION APPL."
-  },
-  {
-    "value": "151",
-    "text": "C14A1 - Appeal against acquittal in SC/ST Act"
-  },
-  {
-    "value": "152",
-    "text": "C14A1D - Appeal against acquittal in SC/ST Act DEFECTIVE"
-  },
-  {
-    "value": "100",
-    "text": "C372 - CRIMINAL APPEAL U/S 372 Cr.PC."
-  },
-  {
-    "value": "101",
-    "text": "C372D - CRIMINAL APPEAL U/S 372 Cr.PC DEFECTIVE"
-  },
-  {
-    "value": "108",
-    "text": "C378 - CRIMINAL APPEAL U/S 378 CR.PC."
-  },
-  {
-    "value": "109",
-    "text": "C378D - CRIMINAL APPEAL U/S 378 Cr.PC DEFECTIVE"
-  },
-  {
-    "value": "18",
-    "text": "CAPL - CONTEMPT APPLICATION (CIVIL)"
-  },
-  {
-    "value": "51",
-    "text": "CAPT - CAPITAL CASES"
-  },
-  {
-    "value": "83",
-    "text": "CAPTD - CAPITAL CASE DEFECTIVE"
-  },
-  {
-    "value": "65",
-    "text": "CEAP - CENTRAL EXCISE REFERENCE APPLICATION"
-  },
-  {
-    "value": "66",
-    "text": "CEAPD - CENTRAL EXCISE REFERENCE APPL. DEFECTIVE"
-  },
-  {
-    "value": "84",
-    "text": "CERA - CENTRAL EXCISE REFERENCE APPLICATION"
-  },
-  {
-    "value": "104",
-    "text": "CERAD - CENTRAL EXCISE REFERENCE APPL. DEFECTIVE"
-  },
-  {
-    "value": "59",
-    "text": "CERE - CENTRAL EXCISE REFERENCE"
-  },
-  {
-    "value": "60",
-    "text": "CERED - CENTRAL EXCESE REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "74",
-    "text": "CEXA - CENTRAL EXCISE APPEAL"
-  },
-  {
-    "value": "75",
-    "text": "CEXAD - CENTRAL EXCISE APPEAL DEFECTIVE"
-  },
-  {
-    "value": "6",
-    "text": "CLRE - CIVIL REVISION"
-  },
-  {
-    "value": "37",
-    "text": "CLRED - CIVIL REVISION DEFECTIVE"
-  },
-  {
-    "value": "131",
-    "text": "CMRA - CIVIL MISC REVIEW APPLICATION"
-  },
-  {
-    "value": "133",
-    "text": "CMRAD - CIVIL MISC REVIEW APPLICATION DEFECTIVE"
-  },
-  {
-    "value": "69",
-    "text": "COMA - COMPANY APPEAL"
-  },
-  {
-    "value": "80",
-    "text": "COMAD - COMPANY APPEAL DEFECTIVE"
-  },
-  {
-    "value": "11",
-    "text": "COMP - COMPANY APPLICATION"
-  },
-  {
-    "value": "32",
-    "text": "CONA - CONTEMPT APPEAL"
-  },
-  {
-    "value": "55",
-    "text": "CONAD - CONTEMPT APPEAL DEFECTIVE"
-  },
-  {
-    "value": "153",
-    "text": "COPL - Commercial Appeal"
-  },
-  {
-    "value": "154",
-    "text": "COPLD - Commercial Appeal DEFECTIVE"
-  },
-  {
-    "value": "26",
-    "text": "COPP - COMPANY PETITION"
-  },
-  {
-    "value": "29",
-    "text": "COSU - COMPANY ORIGINAL SUIT"
-  },
-  {
-    "value": "28",
-    "text": "CRCL - CONTEMPT APPLICATION (CRIMINAL)"
-  },
-  {
-    "value": "98",
-    "text": "CREF - CRIMINAL REFERENCE"
-  },
-  {
-    "value": "99",
-    "text": "CREFD - CRIMINAL REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "13",
-    "text": "CRLA - CRIMINAL APPEAL"
-  },
-  {
-    "value": "35",
-    "text": "CRLAD - CRIMINAL APPEAL DEFECTIVE"
-  },
-  {
-    "value": "30",
-    "text": "CRLP - CRIMINAL MISC. WRIT PETITION"
-  },
-  {
-    "value": "14",
-    "text": "CRLR - CRIMINAL REVISION"
-  },
-  {
-    "value": "36",
-    "text": "CRLRD - CRIMINAL REVISION DEFECTIVE"
-  },
-  {
-    "value": "119",
-    "text": "CROB - CROSS OBJECTION"
-  },
-  {
-    "value": "105",
-    "text": "CRPIL - CRIMINAL WRIT-PUBLIC INTEREST LITIGATION"
-  },
-  {
-    "value": "130",
-    "text": "CRRA - CRIMINAL MISC REVIEW APPLICATION"
-  },
-  {
-    "value": "132",
-    "text": "CRRAD - CRIMINAL MISC REVIEW APPLICATION DEFECTIVE"
-  },
-  {
-    "value": "94",
-    "text": "CUSA - CUSTOMS APPEAL"
-  },
-  {
-    "value": "95",
-    "text": "CUSAD - CUSTOM APPEAL DEFECTIVE"
-  },
-  {
-    "value": "76",
-    "text": "EAPL - ESTATE DUTY APPEAL"
-  },
-  {
-    "value": "77",
-    "text": "EAPLD - ESTATE DUTY APPEAL DEFECTIVE"
-  },
-  {
-    "value": "33",
-    "text": "ECASE - EXECUTION CASE"
-  },
-  {
-    "value": "44",
-    "text": "EDAP - ESTATE DUTY APPLICATION"
-  },
-  {
-    "value": "67",
-    "text": "EDAPD - ESTATE DUTY REFERENCE APPL. DEFECTIVE"
-  },
-  {
-    "value": "46",
-    "text": "EDRE - ESTATE DUTY REFERENCE"
-  },
-  {
-    "value": "61",
-    "text": "EDRED - ESTATE DUTY REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "134",
-    "text": "EFAPL - EQUATION FIRST APPEAL"
-  },
-  {
-    "value": "135",
-    "text": "EFAPLD - EQUATION FIRST APPEAL DEFECTIVE"
-  },
-  {
-    "value": "27",
-    "text": "ELEP - ELECTION PETITION"
-  },
-  {
-    "value": "3",
-    "text": "FAFO - FIRST APPEAL FROM ORDER"
-  },
-  {
-    "value": "25",
-    "text": "FAFOD - FIRST APPEAL FROM ORDER DEFECTIVE"
-  },
-  {
-    "value": "1",
-    "text": "FAPL - FIRST APPEAL"
-  },
-  {
-    "value": "23",
-    "text": "FAPLD - FIRST APPEAL DEFECTIVE"
-  },
-  {
-    "value": "96",
-    "text": "FEXA - FOREIGN EXCHANGE APPEAL"
-  },
-  {
-    "value": "97",
-    "text": "FEXAD - FOREIGN EXCHANGE APPEAL DEFECTIVE"
-  },
-  {
-    "value": "78",
-    "text": "GAPL - GIFT TAX APPEAL"
-  },
-  {
-    "value": "79",
-    "text": "GAPLD - GIFT TAX APPEAL DEFECTIVE"
-  },
-  {
-    "value": "81",
-    "text": "GOVA - GOVERNMENT APPEAL"
-  },
-  {
-    "value": "82",
-    "text": "GOVAD - GOVERNMENT APPEAL DEFECTIVE"
-  },
-  {
-    "value": "128",
-    "text": "GSTAL - GOODS AND SERVICE TAX APPEAL"
-  },
-  {
-    "value": "129",
-    "text": "GSTALD - GOODS AND SERVICE TAX APPEAL DEFECTIVE"
-  },
-  {
-    "value": "57",
-    "text": "GTAP - GIFT TAX APPLICATION"
-  },
-  {
-    "value": "68",
-    "text": "GTAPD - GIFT TAX REFERENCE APPL. DEFECTIVE"
-  },
-  {
-    "value": "53",
-    "text": "GTRE - GIFT TAX REFERENCE"
-  },
-  {
-    "value": "63",
-    "text": "GTRED - GIFT TAX REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "88",
-    "text": "HABC - HABEAS CORPUS WRIT PETITION"
-  },
-  {
-    "value": "70",
-    "text": "IAPL - INCOME TAX APPEAL"
-  },
-  {
-    "value": "71",
-    "text": "IAPLD - INCOME TAX APPEAL DEFECTIVE"
-  },
-  {
-    "value": "10",
-    "text": "ITAP - INCOME TAX APPLICATION"
-  },
-  {
-    "value": "39",
-    "text": "ITAPD - INCOME TAX APPLICATION DEFECTIVE"
-  },
-  {
-    "value": "7",
-    "text": "ITRE - INCOME TAX REFERENCE"
-  },
-  {
-    "value": "62",
-    "text": "ITRED - INCOME TAX REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "85",
-    "text": "JAPL - JAIL APPEAL"
-  },
-  {
-    "value": "86",
-    "text": "JAPLD - JAIL APPEAL DEFECTIVE"
-  },
-  {
-    "value": "49",
-    "text": "MCOA - MISC. COMPANY APPLICATION"
-  },
-  {
-    "value": "54",
-    "text": "MTAL - MATRIMONIAL"
-  },
-  {
-    "value": "145",
-    "text": "NA379 - Criminal Misc. Application U/s 379 BNSS"
-  },
-  {
-    "value": "146",
-    "text": "NA413 - Criminal Misc. Application U/s 413 BNSS"
-  },
-  {
-    "value": "147",
-    "text": "NA413D - Criminal Misc. Application U/s 413 BNSS DEFECTIVE"
-  },
-  {
-    "value": "148",
-    "text": "NA419 - Criminal Misc. Application U/s 419 BNSS"
-  },
-  {
-    "value": "149",
-    "text": "NA419D - Criminal Misc. Application U/s 419 BNSS DEFECTIVE"
-  },
-  {
-    "value": "150",
-    "text": "NA430 - Criminal Misc. Application U/s 430(2) BNSS"
-  },
-  {
-    "value": "138",
-    "text": "NA528 - Application u/s 528 BNSS"
-  },
-  {
-    "value": "139",
-    "text": "NA529 - Application u/s 529 BNSS"
-  },
-  {
-    "value": "144",
-    "text": "NABAIL - Criminal Misc. Anticipatory Bail Application U/s 482 BNSS"
-  },
-  {
-    "value": "140",
-    "text": "NC413 - Criminal Appeal U/s 413 BNSS"
-  },
-  {
-    "value": "141",
-    "text": "NC413D - Criminal Appeal U/s 413 BNSS DEFECTIVE"
-  },
-  {
-    "value": "142",
-    "text": "NC419 - Criminal Appeal U/s 419 BNSS"
-  },
-  {
-    "value": "143",
-    "text": "NC419D - Criminal Appeal U/s 419 BNSS DEFECTIVE"
-  },
-  {
-    "value": "93",
-    "text": "OLR - OFFICIAL LIQUIDATOR REPORTS"
-  },
-  {
-    "value": "113",
-    "text": "OSUT - ORIGINAL SUIT"
-  },
-  {
-    "value": "114",
-    "text": "PRCS - PROBATE CASE"
-  },
-  {
-    "value": "45",
-    "text": "REFC - REFERENCE AGAINST MISC. ACTS."
-  },
-  {
-    "value": "87",
-    "text": "REFE - REFERRED CASE(CAPITAL CASE)"
-  },
-  {
-    "value": "118",
-    "text": "RERA - RERA APPEAL"
-  },
-  {
-    "value": "120",
-    "text": "RERAD - RERA APPEAL DEFECTIVE"
-  },
-  {
-    "value": "31",
-    "text": "SAFO - SECOND APPEAL FROM ORDER"
-  },
-  {
-    "value": "91",
-    "text": "SAFOD - SECOND APPEAL FROM ORDER DEFECTIVE"
-  },
-  {
-    "value": "125",
-    "text": "SAMC - SECOND APPEAL MISC CASES"
-  },
-  {
-    "value": "2",
-    "text": "SAPL - SECOND APPEAL"
-  },
-  {
-    "value": "24",
-    "text": "SAPLD - SECOND APPEAL DEFECTIVE"
-  },
-  {
-    "value": "5",
-    "text": "SCAP - SUPREME COURT APPEAL"
-  },
-  {
-    "value": "122",
-    "text": "SCAPD - SUPREME COURT APPEAL DEFECTIVE"
-  },
-  {
-    "value": "110",
-    "text": "SCCR - S.C.C. REVISION"
-  },
-  {
-    "value": "111",
-    "text": "SCCRD - S.C.C. REVISION DEFECTIVE"
-  },
-  {
-    "value": "4",
-    "text": "SPLA - SPECIAL APPEAL"
-  },
-  {
-    "value": "34",
-    "text": "SPLAD - SPECIAL APPEAL DEFECTIVE"
-  },
-  {
-    "value": "8",
-    "text": "STRE - SALES/TRADE TAX REVISION"
-  },
-  {
-    "value": "42",
-    "text": "STRED - SALES/TRADE TAX REVISION DEFECTIVE"
-  },
-  {
-    "value": "9",
-    "text": "TACL - TRANSFER APPLICATION (CIVIL)"
-  },
-  {
-    "value": "43",
-    "text": "TACLD - TRANSFER APPLICATION DEFECTIVE(CIVIL)"
-  },
-  {
-    "value": "19",
-    "text": "TACR - TRANSFER APPLICATION (CRIMINAL)"
-  },
-  {
-    "value": "157",
-    "text": "TEAP - TESTAMENTARY APPLICATION"
-  },
-  {
-    "value": "12",
-    "text": "TEST - TESTAMENTARY CASE"
-  },
-  {
-    "value": "56",
-    "text": "TESU - TESTAMENTARY SUIT"
-  },
-  {
-    "value": "72",
-    "text": "WAPL - WEALTH TAX APPEAL"
-  },
-  {
-    "value": "73",
-    "text": "WAPLD - WEALTH TAX APPEAL DEFECTIVE"
-  },
-  {
-    "value": "92",
-    "text": "WPIL - WRIT - PUBLIC INTEREST LITIGATION"
-  },
-  {
-    "value": "155",
-    "text": "WQPL - WAQF APPEAL"
-  },
-  {
-    "value": "156",
-    "text": "WQPLD - WAQF APPEAL DEFECTIVE"
-  },
-  {
-    "value": "20",
-    "text": "WRIA - WRIT - A"
-  },
-  {
-    "value": "21",
-    "text": "WRIB - WRIT - B"
-  },
-  {
-    "value": "22",
-    "text": "WRIC - WRIT - C"
-  },
-  {
-    "value": "52",
-    "text": "WTAP - WEALTH TAX APPLICATION"
-  },
-  {
-    "value": "58",
-    "text": "WTAPD - WEALTH TAX APPLICATION DEFECTIVE"
-  },
-  {
-    "value": "117",
-    "text": "WTAR - WEALTH TAX REFERENCE"
-  },
-  {
-    "value": "64",
-    "text": "WTARD - WEALTH TAX REFERENCE DEFECTIVE"
-  },
-  {
-    "value": "47",
-    "text": "WTAX - WRIT TAX"
-  },
-  {
-    "value": "48",
-    "text": "WTRE - W.T.R."
-  }
+    "CaseType": 105,
+    "FullForm": "CRPIL - CRIMINAL WRIT-PUBLIC INTEREST LITIGATION"
+  },
+  { "CaseType": 130, "FullForm": "CRRA - CRIMINAL MISC REVIEW APPLICATION" },
+  {
+    "CaseType": 132,
+    "FullForm": "CRRAD - CRIMINAL MISC REVIEW APPLICATION DEFECTIVE"
+  },
+  { "CaseType": 94, "FullForm": "CUSA - CUSTOMS APPEAL" },
+  { "CaseType": 95, "FullForm": "CUSAD - CUSTOM APPEAL DEFECTIVE" },
+  { "CaseType": 76, "FullForm": "EAPL - ESTATE DUTY APPEAL" },
+  { "CaseType": 77, "FullForm": "EAPLD - ESTATE DUTY APPEAL DEFECTIVE" },
+  { "CaseType": 33, "FullForm": "ECASE - EXECUTION CASE" },
+  { "CaseType": 44, "FullForm": "EDAP - ESTATE DUTY APPLICATION" },
+  {
+    "CaseType": 67,
+    "FullForm": "EDAPD - ESTATE DUTY REFERENCE APPL. DEFECTIVE"
+  },
+  { "CaseType": 46, "FullForm": "EDRE - ESTATE DUTY REFERENCE" },
+  { "CaseType": 61, "FullForm": "EDRED - ESTATE DUTY REFERENCE DEFECTIVE" },
+  { "CaseType": 134, "FullForm": "EFAPL - EQUATION FIRST APPEAL" },
+  { "CaseType": 135, "FullForm": "EFAPLD - EQUATION FIRST APPEAL DEFECTIVE" },
+  { "CaseType": 27, "FullForm": "ELEP - ELECTION PETITION" },
+  { "CaseType": 3, "FullForm": "FAFO - FIRST APPEAL FROM ORDER" },
+  { "CaseType": 25, "FullForm": "FAFOD - FIRST APPEAL FROM ORDER DEFECTIVE" },
+  { "CaseType": 1, "FullForm": "FAPL - FIRST APPEAL" },
+  { "CaseType": 23, "FullForm": "FAPLD - FIRST APPEAL DEFECTIVE" },
+  { "CaseType": 96, "FullForm": "FEXA - FOREIGN EXCHANGE APPEAL" },
+  { "CaseType": 97, "FullForm": "FEXAD - FOREIGN EXCHANGE APPEAL DEFECTIVE" },
+  { "CaseType": 78, "FullForm": "GAPL - GIFT TAX APPEAL" },
+  { "CaseType": 79, "FullForm": "GAPLD - GIFT TAX APPEAL DEFECTIVE" },
+  { "CaseType": 81, "FullForm": "GOVA - GOVERNMENT APPEAL" },
+  { "CaseType": 82, "FullForm": "GOVAD - GOVERNMENT APPEAL DEFECTIVE" },
+  { "CaseType": 128, "FullForm": "GSTAL - GOODS AND SERVICE TAX APPEAL" },
+  {
+    "CaseType": 129,
+    "FullForm": "GSTALD - GOODS AND SERVICE TAX APPEAL DEFECTIVE"
+  },
+  { "CaseType": 57, "FullForm": "GTAP - GIFT TAX APPLICATION" },
+  { "CaseType": 68, "FullForm": "GTAPD - GIFT TAX REFERENCE APPL. DEFECTIVE" },
+  { "CaseType": 53, "FullForm": "GTRE - GIFT TAX REFERENCE" },
+  { "CaseType": 63, "FullForm": "GTRED - GIFT TAX REFERENCE DEFECTIVE" },
+  { "CaseType": 88, "FullForm": "HABC - HABEAS CORPUS WRIT PETITION" },
+  { "CaseType": 70, "FullForm": "IAPL - INCOME TAX APPEAL" },
+  { "CaseType": 71, "FullForm": "IAPLD - INCOME TAX APPEAL DEFECTIVE" },
+  { "CaseType": 10, "FullForm": "ITAP - INCOME TAX APPLICATION" },
+  { "CaseType": 39, "FullForm": "ITAPD - INCOME TAX APPLICATION DEFECTIVE" },
+  { "CaseType": 7, "FullForm": "ITRE - INCOME TAX REFERENCE" },
+  { "CaseType": 62, "FullForm": "ITRED - INCOME TAX REFERENCE DEFECTIVE" },
+  { "CaseType": 85, "FullForm": "JAPL - JAIL APPEAL" },
+  { "CaseType": 86, "FullForm": "JAPLD - JAIL APPEAL DEFECTIVE" },
+  { "CaseType": 49, "FullForm": "MCOA - MISC. COMPANY APPLICATION" },
+  { "CaseType": 54, "FullForm": "MTAL - MATRIMONIAL" },
+  {
+    "CaseType": 145,
+    "FullForm": "NA379 - Criminal Misc. Application U/s 379 BNSS"
+  },
+  {
+    "CaseType": 146,
+    "FullForm": "NA413 - Criminal Misc. Application U/s 413 BNSS"
+  },
+  {
+    "CaseType": 147,
+    "FullForm": "NA413D - Criminal Misc. Application U/s 413 BNSS DEFECTIVE"
+  },
+  {
+    "CaseType": 148,
+    "FullForm": "NA419 - Criminal Misc. Application U/s 419 BNSS"
+  },
+  {
+    "CaseType": 149,
+    "FullForm": "NA419D - Criminal Misc. Application U/s 419 BNSS DEFECTIVE"
+  },
+  {
+    "CaseType": 150,
+    "FullForm": "NA430 - Criminal Misc. Application U/s 430(2) BNSS"
+  },
+  { "CaseType": 138, "FullForm": "NA528 - Application u/s 528 BNSS" },
+  { "CaseType": 139, "FullForm": "NA529 - Application u/s 529 BNSS" },
+  {
+    "CaseType": 144,
+    "FullForm": "NABAIL - Criminal Misc. Anticipatory Bail Application U/s 482 BNSS"
+  },
+  { "CaseType": 140, "FullForm": "NC413 - Criminal Appeal U/s 413 BNSS" },
+  {
+    "CaseType": 141,
+    "FullForm": "NC413D - Criminal Appeal U/s 413 BNSS DEFECTIVE"
+  },
+  { "CaseType": 142, "FullForm": "NC419 - Criminal Appeal U/s 419 BNSS" },
+  {
+    "CaseType": 143,
+    "FullForm": "NC419D - Criminal Appeal U/s 419 BNSS DEFECTIVE"
+  },
+  { "CaseType": 93, "FullForm": "OLR - OFFICIAL LIQUIDATOR REPORTS" },
+  { "CaseType": 113, "FullForm": "OSUT - ORIGINAL SUIT" },
+  { "CaseType": 114, "FullForm": "PRCS - PROBATE CASE" },
+  { "CaseType": 45, "FullForm": "REFC - REFERENCE AGAINST MISC. ACTS." },
+  { "CaseType": 87, "FullForm": "REFE - REFERRED CASE(CAPITAL CASE)" },
+  { "CaseType": 118, "FullForm": "RERA - RERA APPEAL" },
+  { "CaseType": 120, "FullForm": "RERAD - RERA APPEAL DEFECTIVE" },
+  { "CaseType": 31, "FullForm": "SAFO - SECOND APPEAL FROM ORDER" },
+  { "CaseType": 91, "FullForm": "SAFOD - SECOND APPEAL FROM ORDER DEFECTIVE" },
+  { "CaseType": 125, "FullForm": "SAMC - SECOND APPEAL MISC CASES" },
+  { "CaseType": 2, "FullForm": "SAPL - SECOND APPEAL" },
+  { "CaseType": 24, "FullForm": "SAPLD - SECOND APPEAL DEFECTIVE" },
+  { "CaseType": 5, "FullForm": "SCAP - SUPREME COURT APPEAL" },
+  { "CaseType": 122, "FullForm": "SCAPD - SUPREME COURT APPEAL DEFECTIVE" },
+  { "CaseType": 110, "FullForm": "SCCR - S.C.C. REVISION" },
+  { "CaseType": 111, "FullForm": "SCCRD - S.C.C. REVISION DEFECTIVE" },
+  { "CaseType": 4, "FullForm": "SPLA - SPECIAL APPEAL" },
+  { "CaseType": 34, "FullForm": "SPLAD - SPECIAL APPEAL DEFECTIVE" },
+  { "CaseType": 8, "FullForm": "STRE - SALES/TRADE TAX REVISION" },
+  { "CaseType": 42, "FullForm": "STRED - SALES/TRADE TAX REVISION DEFECTIVE" },
+  { "CaseType": 9, "FullForm": "TACL - TRANSFER APPLICATION (CIVIL)" },
+  {
+    "CaseType": 43,
+    "FullForm": "TACLD - TRANSFER APPLICATION DEFECTIVE(CIVIL)"
+  },
+  { "CaseType": 19, "FullForm": "TACR - TRANSFER APPLICATION (CRIMINAL)" },
+  { "CaseType": 157, "FullForm": "TEAP - TESTAMENTARY APPLICATION" },
+  { "CaseType": 12, "FullForm": "TEST - TESTAMENTARY CASE" },
+  { "CaseType": 56, "FullForm": "TESU - TESTAMENTARY SUIT" },
+  { "CaseType": 72, "FullForm": "WAPL - WEALTH TAX APPEAL" },
+  { "CaseType": 73, "FullForm": "WAPLD - WEALTH TAX APPEAL DEFECTIVE" },
+  { "CaseType": 92, "FullForm": "WPIL - WRIT - PUBLIC INTEREST LITIGATION" },
+  { "CaseType": 155, "FullForm": "WQPL - WAQF APPEAL" },
+  { "CaseType": 156, "FullForm": "WQPLD - WAQF APPEAL DEFECTIVE" },
+  { "CaseType": 20, "FullForm": "WRIA - WRIT - A" },
+  { "CaseType": 21, "FullForm": "WRIB - WRIT - B" },
+  { "CaseType": 22, "FullForm": "WRIC - WRIT - C" },
+  { "CaseType": 52, "FullForm": "WTAP - WEALTH TAX APPLICATION" },
+  { "CaseType": 58, "FullForm": "WTAPD - WEALTH TAX APPLICATION DEFECTIVE" },
+  { "CaseType": 117, "FullForm": "WTAR - WEALTH TAX REFERENCE" },
+  { "CaseType": 64, "FullForm": "WTARD - WEALTH TAX REFERENCE DEFECTIVE" },
+  { "CaseType": 47, "FullForm": "WTAX - WRIT TAX" },
+  { "CaseType": 48, "FullForm": "WTRE - W.T.R." }
 ]

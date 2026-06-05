@@ -1,21 +1,35 @@
 // define the response sent back to the frontend
-
 package com.ahc.chatbot.model;
 
 public class ChatResponse {
 
-	private String caseNumber;
-	private String status;
-    private String petitioner;
-    private String respondent;
-    private String nextHearingDate;
-    
+    private Long caseId;
+    private String caseNumber;
+    private String partyName;
+    private String status;
+
+    public Long getCaseId() {
+        return caseId;
+    }
+
+    public void setCaseId(Long caseId) {
+        this.caseId = caseId;
+    }
+
     public String getCaseNumber() {
         return caseNumber;
     }
-    
+
     public void setCaseNumber(String caseNumber) {
         this.caseNumber = caseNumber;
+    }
+
+    public String getPartyName() {
+        return partyName;
+    }
+
+    public void setPartyName(String partyName) {
+        this.partyName = partyName;
     }
 
     public String getStatus() {
@@ -24,29 +38,5 @@ public class ChatResponse {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getPetitioner() {
-        return petitioner;
-    }
-
-    public void setPetitioner(String petitioner) {
-        this.petitioner = petitioner;
-    }
-
-    public String getRespondent() {
-        return respondent;
-    }
-
-    public void setRespondent(String respondent) {
-        this.respondent = respondent;
-    }
-
-    public String getNextHearingDate() {
-        return nextHearingDate;
-    }
-    
-    public void setNextHearingDate(String nextHearingDate) {
-        this.nextHearingDate = nextHearingDate;
     }
 }
