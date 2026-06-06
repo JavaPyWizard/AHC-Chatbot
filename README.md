@@ -1,14 +1,14 @@
-# ⚖️ Allahabad High Court Chatbot
+# ⚖️ High Court of Judicature at Allahabad Chatbot
 
-A web-based chatbot application currently being developed during my internship at the Allahabad High Court. The project aims to simplify case information retrieval by providing an interactive conversational interface for accessing court case details through integrated court APIs.
+A web-based chatbot application currently being developed during my internship at the High Court of Judicature at Allahabad. The project aims to simplify case information retrieval by providing an interactive conversational interface for accessing court case details through integrated court APIs.
 
 ---
 
 # 📌 Project Overview
 
-The Allahabad High Court Chatbot allows users to search and retrieve case information through a simple chat interface instead of navigating multiple screens manually.
+The High Court of Judicature at Allahabad Chatbot allows users to search and retrieve case information through a simple chat interface instead of navigating multiple screens manually.
 
-The system is being developed using Spring Boot, JavaScript, HTML, and CSS, with integration to the Allahabad High Court Case Status APIs.
+The system is being developed using Spring Boot, JavaScript, HTML, and CSS, with integration to the High Court of Judicature at Allahabad Case Status APIs.
 
 ---
 
@@ -158,7 +158,7 @@ Displays:
 
 ## APIs
 
-* Allahabad High Court Case Status APIs
+* High Court of Judicature at Allahabad Case Status APIs
 
 ---
 
@@ -299,4 +299,4 @@ Planned:
 
 # 🏛️ Internship Status
 
-This project is currently under active development as part of an ongoing internship at the Allahabad High Court Computer Centre Department. New features and enhancements are continuously being added based on project requirements and feedback.
+This project is currently under active development as part of an ongoing internship at the High Court of Judicature at Allahabad Computer Centre Department. New features and enhancements are continuously being added based on project requirements and feedback.
