@@ -41,7 +41,7 @@ body {
 }
 
 .chat-header {
-  height: 80px;
+  height: 65px;
 
   background: linear-gradient(135deg, #003366, #0052a3);
 
@@ -63,8 +63,8 @@ body {
 }
 
 .logo-section img {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
 
   background: white;
@@ -73,7 +73,7 @@ body {
 }
 
 .logo-section h2 {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
@@ -104,7 +104,7 @@ body {
 
   overflow-y: auto;
 
-  padding: 25px;
+  padding: 15px;
 
   display: flex;
   flex-direction: column;
@@ -260,56 +260,6 @@ body {
   box-shadow: 0 5px 15px rgba(0, 82, 163, 0.3);
 }
 
-body.dark-mode {
-  background: linear-gradient(135deg, #10141a, #1a2230);
-}
-
-body.dark-mode .chat-container {
-  background: #1c2431;
-}
-
-body.dark-mode .chat-body {
-  background: linear-gradient(180deg, #222c3c, #1c2431);
-}
-
-body.dark-mode .bot-message {
-  background: #2d3748;
-
-  color: white;
-}
-
-body.dark-mode .user-message {
-  background: linear-gradient(135deg, #0d5bcf, #3888ff);
-}
-
-body.dark-mode .chat-input {
-  background: #1c2431;
-
-  border-top: 1px solid #324056;
-}
-
-body.dark-mode .chat-input input {
-  background: #2d3748;
-
-  color: white;
-
-  border: 1px solid #44556f;
-}
-
-body.dark-mode .option-btn {
-  background: #2d3748;
-
-  color: white;
-}
-
-body.dark-mode .option-btn:hover {
-  background: #0d5bcf;
-}
-
-body.dark-mode .theme-btn {
-  background: #2d3748;
-}
-
 @media (max-width: 768px) {
   .chat-container {
     width: 100%;
@@ -440,27 +390,6 @@ body.dark-mode .theme-btn {
   box-shadow: 0 4px 12px rgba(0, 82, 163, 0.3);
 }
 
-body.dark-mode .dynamic-form {
-  background: #2d3748;
-}
-
-body.dark-mode .dynamic-form input {
-  background: #1c2431;
-
-  color: white;
-
-  border: 1px solid #44556f;
-}
-
-body.dark-mode .dynamic-form input::placeholder {
-  color: #c0c8d4;
-}
-
-body.dark-mode .dynamic-form button,
-body.dark-mode .submit-selection-btn {
-  background: linear-gradient(135deg, #0d5bcf, #3888ff);
-}
-
 .case-type-select {
   width: 100%;
 
@@ -485,14 +414,6 @@ body.dark-mode .submit-selection-btn {
   border-color: #0052a3;
 
   box-shadow: 0 0 0 3px rgba(0, 82, 163, 0.15);
-}
-
-body.dark-mode .case-type-select {
-  background: #1c2431;
-
-  color: white;
-
-  border: 1px solid #44556f;
 }
 
 .typing-loader {
@@ -535,4 +456,206 @@ body.dark-mode .case-type-select {
   40% {
     transform: scale(1);
   }
+}
+/* =========================
+   CHAT LAUNCHER
+========================= */
+
+#chatLauncher {
+
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    width: 58px;
+
+    height: 58px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #003366,
+        #0052a3
+    );
+
+    color: white;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+
+    box-shadow: 0 6px 18px rgba(
+        0,
+        0,
+        0,
+        0.25
+    );
+
+    transition: 0.3s;
+}
+
+#chatLauncher:hover {
+
+    transform: scale(1.08);
+}
+
+/* =========================
+   CHAT WIDGET
+========================= */
+
+#chatWidget {
+
+    display: none;
+
+    position: fixed;
+
+    bottom: 85px;
+
+    right: 20px;
+
+    width: 340px;
+
+    height: 500px;
+
+    z-index: 9999;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 12px 30px rgba(
+        0,
+        0,
+        0,
+        0.18
+    );
+}
+
+/* =========================
+   FULL SCREEN MODE
+========================= */
+
+#chatWidget.maximized {
+
+    top: 0;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    border-radius: 0;
+}
+
+/* =========================
+   CHAT CONTAINER
+========================= */
+
+.chat-container {
+
+    width: 100%;
+
+    height: 100%;
+
+    max-width: none;
+
+    background: white;
+
+    border-radius: inherit;
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow: none;
+}
+
+#chatWidget.maximized .chat-container {
+
+    width: 100%;
+
+    height: 100%;
+
+    border-radius: 0;
+}
+
+/* =========================
+   HEADER ACTIONS
+========================= */
+
+.header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.header-actions button {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+.header-actions button:hover {
+
+    transform: scale(1.08);
+}
+
+/* =========================
+   MAXIMIZE ICON
+========================= */
+
+#maximizeBtn img {
+
+    width: 18px;
+
+    height: 18px;
+
+    object-fit: contain;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+#closeBtn {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #003366;
 }

@@ -3,34 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AHC Chatbot</title>
+    <title>High Court of Judicature at Allahabad Chatbot</title>
 
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <div class="chat-container">
-      <!-- Header -->
-      <div class="chat-header">
-        <div class="logo-section">
-          <img src="images/ahc-logo.png" alt="AHC Logo" />
-          <h2>High Court of Judicature at Allahabad Chatbot</h2>
+
+    <!-- Chat Launcher -->
+    <button id="chatLauncher">
+        💬
+    </button>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget">
+
+        <div class="chat-container">
+
+            <div class="chat-header">
+
+                <div class="logo-section">
+                    <img src="images/ahc-logo.png" alt="AHC Logo" />
+                    <h2>AHC Chatbot</h2>
+                </div>
+
+                <div class="header-actions">
+
+                    <button id="maximizeBtn">
+                        <img src="images/maximize icon.png" alt="Maximize Button" />
+                    </button>
+
+                    <button id="closeBtn">
+                        ✖
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="chat-body" id="chatBody"></div>
+
+            <div class="chat-input">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Type here..."
+                    disabled
+                />
+
+                <button id="sendBtn" disabled>
+                    Send
+                </button>
+            </div>
+
         </div>
 
-        <button class="theme-btn" id="themeBtn">🌙</button>
-      </div>
-
-      <!-- Chat Messages -->
-      <div class="chat-body" id="chatBody"></div>
-
-      <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Type here..." disabled />
-
-        <button id="sendBtn" disabled>Send</button>
-      </div>
-      
     </div>
 
     <script src="js/script.js"></script>
-  </body>
+
+</body>
 </html>

@@ -1,24 +1,6 @@
 let caseTypes = [];
 
 const chatBody = document.getElementById("chatBody");
-const themeBtn = document.getElementById("themeBtn");
-// THEME
-const savedTheme = localStorage.getItem("theme");
-
-if (savedTheme === "dark") {
-  document.body.classList.add("dark-mode");
-  themeBtn.textContent = "☀️";
-}
-
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-
-  const isDark = document.body.classList.contains("dark-mode");
-
-  themeBtn.textContent = isDark ? "☀️" : "🌙";
-
-  localStorage.setItem("theme", isDark ? "dark" : "light");
-});
 // HELPERS
 function scrollBottom() {
   chatBody.scrollTop = chatBody.scrollHeight;
@@ -135,10 +117,14 @@ function startChat() {
 
   addBotMessage("Please select a query.");
 
-  createButtons(["Case Details"]);
+  createButtons(["Case Details",
+                  "Case Filing Status",
+                  "Roster / Constitution / Arrangement / Supplementary Constitution"
+  ]);
 }
 // OPTION HANDLER
 function handleOption(option) {
+
   addUserMessage(option);
 
   if (option === "Case Details") {
@@ -149,15 +135,80 @@ function handleOption(option) {
     addBotMessage("2. Case Number");
     addBotMessage("3. Case Year");
 
-    createButtons(["Yes", "No", "Back"]);
+    createButtons([
+      "Yes",
+      "No",
+      "Back"
+    ]);
+
+  } else if (option === "Case Filing Status") {
+
+    addBotMessage(
+      "Select Filing Mode."
+    );
+
+    createButtons([
+      "eFiling",
+      "Physical",
+      "Back"
+    ]);
+
+  } else if (option === "eFiling") {
+
+    showDiaryNumberForm();
+
+  } else if (option === "Physical") {
+
+    showTokenNumberForm();
+
+  } else if (
+    option ===
+    "Roster / Constitution / Arrangement / Supplementary Constitution"
+  ) {
+
+    addBotMessage(
+      "Select an option."
+    );
+
+    createButtons([
+      "Roster",
+      "Constitution",
+      "Arrangement",
+      "Supplementary Constitution",
+      "Back"
+    ]);
+
+  } else if (
+    option === "Roster" ||
+    option === "Constitution" ||
+    option === "Arrangement" ||
+    option === "Supplementary Constitution"
+  ) {
+
+    addBotMessage(
+      "API integration pending."
+    );
+
+    createButtons([
+      "Another Query"
+    ]);
+
   } else if (option === "Yes") {
+
     showYesForm();
+
   } else if (option === "No") {
+
     showNoOptions();
+
   } else if (option === "Back") {
+
     restartChat();
+
   } else if (option === "Another Query") {
+
     restartChat();
+
   }
 }
 // YES FLOW
@@ -421,6 +472,110 @@ function showDynamicForm() {
   scrollBottom();
 }
 
+function showDiaryNumberForm() {
+
+  addBotMessage(
+    "Enter Diary Number."
+  );
+
+  const form =
+    document.createElement("div");
+
+  form.className =
+    "dynamic-form";
+
+  form.innerHTML = `
+    <input
+      id="diaryNumber"
+      placeholder="Diary Number"
+    >
+
+    <button id="submitDiary">
+      Submit
+    </button>
+
+    <button id="backDiary">
+      ⬅ Back
+    </button>
+  `;
+
+  chatBody.appendChild(form);
+
+  document
+    .getElementById("submitDiary")
+    .addEventListener(
+      "click",
+      () => {
+
+        addBotMessage(
+          "API integration pending."
+        );
+
+      }
+    );
+
+  document
+    .getElementById("backDiary")
+    .addEventListener(
+      "click",
+      restartChat
+    );
+
+  scrollBottom();
+}
+
+function showTokenNumberForm() {
+
+  addBotMessage(
+    "Enter Token Number."
+  );
+
+  const form =
+    document.createElement("div");
+
+  form.className =
+    "dynamic-form";
+
+  form.innerHTML = `
+    <input
+      id="tokenNumber"
+      placeholder="Token Number"
+    >
+
+    <button id="submitToken">
+      Submit
+    </button>
+
+    <button id="backToken">
+      ⬅ Back
+    </button>
+  `;
+
+  chatBody.appendChild(form);
+
+  document
+    .getElementById("submitToken")
+    .addEventListener(
+      "click",
+      () => {
+
+        addBotMessage(
+          "API integration pending."
+        );
+
+      }
+    );
+
+  document
+    .getElementById("backToken")
+    .addEventListener(
+      "click",
+      restartChat
+    );
+
+  scrollBottom();
+}
+
 // API
 async function searchCase(requestData) {
   try {
@@ -539,3 +694,49 @@ function restartChat() {
 loadCaseTypes().then(() => {
   startChat();
 });
+
+const chatLauncher =
+    document.getElementById("chatLauncher");
+
+const chatWidget =
+    document.getElementById("chatWidget");
+
+const maximizeBtn =
+    document.getElementById("maximizeBtn");
+
+const closeBtn =
+    document.getElementById("closeBtn");
+
+chatLauncher.addEventListener(
+    "click",
+    () => {
+
+        chatWidget.style.display =
+            "block";
+
+        chatLauncher.style.display =
+            "none";
+    }
+);
+
+closeBtn.addEventListener(
+    "click",
+    () => {
+
+        chatWidget.style.display =
+            "none";
+
+        chatLauncher.style.display =
+            "block";
+    }
+);
+
+maximizeBtn.addEventListener(
+    "click",
+    () => {
+
+        chatWidget.classList.toggle(
+            "maximized"
+        );
+    }
+);
