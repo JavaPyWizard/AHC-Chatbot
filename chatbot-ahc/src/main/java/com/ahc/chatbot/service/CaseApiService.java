@@ -2,7 +2,9 @@
 
 package com.ahc.chatbot.service;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.ahc.chatbot.model.CaseDetailsRequest;
 import com.ahc.chatbot.model.CaseDetailsResponse;
+import com.ahc.chatbot.model.DefectResponse;
+import com.ahc.chatbot.model.FilingStatusResponse;
 
 @Service
 public class CaseApiService {
@@ -125,4 +129,44 @@ public class CaseApiService {
                 request,
                 Object.class);
     }
+
+    public FilingStatusResponse getFilingDetailsByTokenNumber(
+        String tokenNumber) {
+
+    Map<String, Object> request =
+            new HashMap<>();
+
+    request.put(
+            "TokenNumber",
+            tokenNumber);
+
+    return restTemplate.postForObject(
+            BASE_URL +
+            "FilingDetailsByTokenNumber",
+            request,
+            FilingStatusResponse.class
+    );
+}
+
+public List<DefectResponse>
+getDefectListByTokenNumber(
+        String tokenNumber) {
+
+    Map<String, Object> request =
+            new HashMap<>();
+
+    request.put(
+            "TokenNumber",
+            tokenNumber);
+
+    DefectResponse[] response =
+            restTemplate.postForObject(
+                    BASE_URL +
+                    "DefectListByTokenNumber",
+                    request,
+                    DefectResponse[].class);
+
+    return Arrays.asList(response);
+}
+
 }

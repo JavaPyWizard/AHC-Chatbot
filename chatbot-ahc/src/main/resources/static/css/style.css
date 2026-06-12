@@ -659,3 +659,298 @@ body {
 
     color: #003366;
 }
+
+/* ==========================================
+   FILING STATUS DASHBOARD
+========================================== */
+
+.filing-status-container {
+
+    width: 100%;
+}
+
+.filing-header {
+
+    text-align: center;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.status-chip {
+
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    background: #dcfce7;
+
+    color: #166534;
+
+    letter-spacing: 0.5px;
+}
+
+.case-number {
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #003366;
+
+    margin-top: 10px;
+}
+
+/* ==========================================
+   METRO TIMELINE
+========================================== */
+
+.timeline {
+
+    position: relative;
+
+    margin-top: 15px;
+
+    margin-left: 8px;
+}
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 13px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 3px;
+
+    background: #d1d5db;
+
+    border-radius: 10px;
+}
+
+.timeline-item {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    z-index: 1;
+}
+
+.dot {
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    border: 4px solid white;
+
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.08);
+}
+
+.green-dot {
+
+    background: #22c55e;
+}
+
+.orange-dot {
+
+    background: #f59e0b;
+}
+
+.blue-dot {
+
+    background: #3b82f6;
+}
+
+.red-dot {
+
+    background: #ef4444;
+}
+
+.timeline-item strong {
+
+    display: block;
+
+    font-size: 15px;
+
+    color: #111827;
+
+    margin-bottom: 4px;
+}
+
+.timeline-item div {
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #6b7280;
+}
+
+/* ==========================================
+   QUICK INSIGHTS
+========================================== */
+
+.quick-insights {
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    border: 1px solid #e5e7eb;
+
+    line-height: 1.8;
+}
+
+.quick-insights h4 {
+
+    color: #003366;
+
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   REMARK SECTION
+========================================== */
+
+.remark-box {
+
+    background: #fff7ed;
+
+    border-left: 5px solid #f59e0b;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    line-height: 1.8;
+}
+
+.remark-box strong {
+
+    color: #92400e;
+}
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+body.dark-mode .case-number {
+
+    color: #60a5fa;
+}
+
+body.dark-mode .timeline::before {
+
+    background: #475569;
+}
+
+body.dark-mode .timeline-item strong {
+
+    color: white;
+}
+
+body.dark-mode .timeline-item div {
+
+    color: #cbd5e1;
+}
+
+body.dark-mode .quick-insights {
+
+    background: #1e293b;
+
+    border: 1px solid #334155;
+
+    color: white;
+}
+
+body.dark-mode .quick-insights h4 {
+
+    color: #93c5fd;
+}
+
+body.dark-mode .remark-box {
+
+    background: #3b2f16;
+
+    border-left: 5px solid #f59e0b;
+
+    color: white;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .case-number {
+
+        font-size: 17px;
+    }
+
+    .timeline-item {
+
+        gap: 12px;
+    }
+
+    .dot {
+
+        width: 24px;
+
+        height: 24px;
+    }
+
+    .quick-insights {
+
+        padding: 14px;
+    }
+}
+
+.viewmore-container {
+
+    margin-top: 10px;
+}
+
+.viewmore-container h3 {
+
+    color: #003366;
+
+    margin-bottom: 15px;
+}
+
+.viewmore-section {
+
+    background: #fff8e1;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border-left: 4px solid #f59e0b;
+}

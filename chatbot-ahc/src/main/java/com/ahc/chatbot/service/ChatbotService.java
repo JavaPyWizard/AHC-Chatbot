@@ -2,16 +2,13 @@
 
 package com.ahc.chatbot.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ahc.chatbot.model.CaseDetailsRequest;
-import com.ahc.chatbot.model.CaseDetailsResponse;
-import com.ahc.chatbot.model.ChatRequest;
-import com.ahc.chatbot.model.ChatResponse;
-import com.ahc.chatbot.model.ViewMoreResponse;
+import com.ahc.chatbot.model.*;
 
 @Service
 public class ChatbotService {
@@ -80,6 +77,64 @@ public class ChatbotService {
             return response;
         }
     }
+
+    public FilingStatusResponse getFilingStatus(
+        String tokenNumber) {
+
+    try {
+
+        return caseApiService
+                .getFilingDetailsByTokenNumber(
+                        tokenNumber);
+
+    } catch (Exception e) {
+
+        System.out.println(
+                "FILING STATUS ERROR : "
+                        + e.getMessage());
+
+        return null;
+    }
+}
+
+public List<DefectResponse>
+getDefectListByTokenNumber(
+        String tokenNumber) {
+
+    try {
+
+        return caseApiService
+                .getDefectListByTokenNumber(
+                        tokenNumber);
+
+    } catch (Exception e) {
+
+        System.out.println(
+                "DEFECT API ERROR : "
+                        + e.getMessage());
+
+        return java.util.Collections
+                .emptyList();
+    }
+}
+
+public PhysicalFilingStatusResponse
+getPhysicalFilingStatus(
+        String tokenNumber) {
+
+    PhysicalFilingStatusResponse response =
+            new PhysicalFilingStatusResponse();
+
+    response.setFilingDetails(
+            getFilingStatus(
+                    tokenNumber));
+
+    response.setDefects(
+            getDefectListByTokenNumber(
+                    tokenNumber));
+
+    return response;
+}
 
     public ViewMoreResponse getViewMoreDetails(
             Long caseId) {

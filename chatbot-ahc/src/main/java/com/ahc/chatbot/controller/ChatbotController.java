@@ -1,19 +1,17 @@
 // // REST controller for chatbot requests
-
 package com.ahc.chatbot.controller;
 
-import com.ahc.chatbot.model.ChatRequest;
-import com.ahc.chatbot.model.ChatResponse;
+import com.ahc.chatbot.model.*;
 import com.ahc.chatbot.service.ChatbotService;
 
-import com.ahc.chatbot.model.ViewMoreRequest;
-import com.ahc.chatbot.model.ViewMoreResponse;
+import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 @RequestMapping("/api")
@@ -47,6 +45,43 @@ public class ChatbotController {
 
         return chatbotService.getCaseDetails(request);
     }
+
+    @PostMapping("/filing-status")
+public FilingStatusResponse getFilingStatus(
+        @RequestBody FilingStatusRequest request) {
+
+    System.out.println(
+            "===== FILING STATUS REQUEST =====");
+
+    System.out.println(
+            "Token Number: "
+                    + request.getTokenNumber());
+
+    return chatbotService.getFilingStatus(
+            request.getTokenNumber());
+}
+
+@PostMapping("/defects")
+public List<DefectResponse>
+getDefects(
+        @RequestBody
+        FilingStatusRequest request) {
+
+    return chatbotService
+            .getDefectListByTokenNumber(
+                    request.getTokenNumber());
+}
+
+@PostMapping("/physical-filing-status")
+public PhysicalFilingStatusResponse
+getPhysicalFilingStatus(
+        @RequestBody
+        FilingStatusRequest request) {
+
+    return chatbotService
+            .getPhysicalFilingStatus(
+                    request.getTokenNumber());
+}
 
     @PostMapping("/view-more")
 public ViewMoreResponse viewMore(

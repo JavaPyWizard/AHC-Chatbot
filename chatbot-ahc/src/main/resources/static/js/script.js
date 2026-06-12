@@ -1,5 +1,7 @@
 let caseTypes = [];
 
+let currentPhysicalFilingData = null;
+
 const chatBody = document.getElementById("chatBody");
 // HELPERS
 function scrollBottom() {
@@ -117,98 +119,62 @@ function startChat() {
 
   addBotMessage("Please select a query.");
 
-  createButtons(["Case Details",
-                  "Case Filing Status",
-                  "Roster / Constitution / Arrangement / Supplementary Constitution"
+  createButtons([
+    "Case Details",
+    "Case Filing Status",
+    "Roster / Constitution / Arrangement / Supplementary Constitution",
   ]);
 }
 // OPTION HANDLER
 function handleOption(option) {
-
   addUserMessage(option);
 
   if (option === "Case Details") {
-
     addBotMessage("Do you have case details?");
 
     addBotMessage("1. Case Type");
     addBotMessage("2. Case Number");
     addBotMessage("3. Case Year");
 
-    createButtons([
-      "Yes",
-      "No",
-      "Back"
-    ]);
-
+    createButtons(["Yes", "No", "Back"]);
   } else if (option === "Case Filing Status") {
+    addBotMessage("Select Filing Mode.");
 
-    addBotMessage(
-      "Select Filing Mode."
-    );
-
-    createButtons([
-      "eFiling",
-      "Physical",
-      "Back"
-    ]);
-
+    createButtons(["eFiling", "Physical", "Back"]);
   } else if (option === "eFiling") {
-
     showDiaryNumberForm();
-
   } else if (option === "Physical") {
-
     showTokenNumberForm();
-
   } else if (
     option ===
     "Roster / Constitution / Arrangement / Supplementary Constitution"
   ) {
-
-    addBotMessage(
-      "Select an option."
-    );
+    addBotMessage("Select an option.");
 
     createButtons([
       "Roster",
       "Constitution",
       "Arrangement",
       "Supplementary Constitution",
-      "Back"
+      "Back",
     ]);
-
   } else if (
     option === "Roster" ||
     option === "Constitution" ||
     option === "Arrangement" ||
     option === "Supplementary Constitution"
   ) {
+    addBotMessage("API integration pending.");
 
-    addBotMessage(
-      "API integration pending."
-    );
-
-    createButtons([
-      "Another Query"
-    ]);
-
+    createButtons(["Another Query"]);
   } else if (option === "Yes") {
-
     showYesForm();
-
   } else if (option === "No") {
-
     showNoOptions();
-
   } else if (option === "Back") {
-
     restartChat();
-
   } else if (option === "Another Query") {
-
     restartChat();
-
   }
 }
 // YES FLOW
@@ -473,16 +439,11 @@ function showDynamicForm() {
 }
 
 function showDiaryNumberForm() {
+  addBotMessage("Enter Diary Number.");
 
-  addBotMessage(
-    "Enter Diary Number."
-  );
+  const form = document.createElement("div");
 
-  const form =
-    document.createElement("div");
-
-  form.className =
-    "dynamic-form";
+  form.className = "dynamic-form";
 
   form.innerHTML = `
     <input
@@ -501,45 +462,26 @@ function showDiaryNumberForm() {
 
   chatBody.appendChild(form);
 
-  document
-    .getElementById("submitDiary")
-    .addEventListener(
-      "click",
-      () => {
+  document.getElementById("submitDiary").addEventListener("click", () => {
+    addBotMessage("API integration pending.");
+  });
 
-        addBotMessage(
-          "API integration pending."
-        );
-
-      }
-    );
-
-  document
-    .getElementById("backDiary")
-    .addEventListener(
-      "click",
-      restartChat
-    );
+  document.getElementById("backDiary").addEventListener("click", restartChat);
 
   scrollBottom();
 }
 
 function showTokenNumberForm() {
+  addBotMessage("Enter Token Number.");
 
-  addBotMessage(
-    "Enter Token Number."
-  );
+  const form = document.createElement("div");
 
-  const form =
-    document.createElement("div");
-
-  form.className =
-    "dynamic-form";
+  form.className = "dynamic-form";
 
   form.innerHTML = `
     <input
       id="tokenNumber"
-      placeholder="Token Number"
+      placeholder="Example: 12558852026"
     >
 
     <button id="submitToken">
@@ -553,27 +495,290 @@ function showTokenNumberForm() {
 
   chatBody.appendChild(form);
 
-  document
-    .getElementById("submitToken")
-    .addEventListener(
-      "click",
-      () => {
+  document.getElementById("submitToken").addEventListener("click", async () => {
+    const tokenNumber = document.getElementById("tokenNumber").value.trim();
 
-        addBotMessage(
-          "API integration pending."
-        );
+    if (!tokenNumber) {
+      addBotMessage("⚠ Please enter Token Number.");
 
+      return;
+    }
+
+    try {
+      addBotMessage("🔍 Searching filing status...");
+
+      const response = await fetch(
+        "http://localhost:8080/api/physical-filing-status",
+        {
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            tokenNumber: tokenNumber,
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Server Error");
       }
-    );
 
-  document
-    .getElementById("backToken")
-    .addEventListener(
-      "click",
-      restartChat
-    );
+      const data = await response.json();
+
+      currentPhysicalFilingData = data;
+
+      const filing = data.filingDetails;
+
+      const defects = data.defects || [];
+
+      const defect = defects.length > 0 ? defects[0] : null;
+
+      addBotMessage(`
+
+            <div class="filing-status-container">
+
+              <div class="filing-header">
+
+                <div class="status-chip">
+
+                  ${
+                    filing.DisplayCaseNumber
+                      ? "🟢 REGISTERED"
+                      : "🟠 UNDER PROCESS"
+                  }
+
+                </div>
+
+                <br>
+
+                <h3>
+                  📄 Filing Status
+                </h3>
+
+                <div class="case-number">
+
+                  ${filing.DisplayCaseNumber || "Not Registered Yet"}
+
+                </div>
+
+                <br>
+
+                <div>
+
+                  👤
+                  ${filing.PetitionerName}
+
+                </div>
+
+                <br>
+
+                <div>
+
+                  🏛
+                  ${filing.RespondentName}
+
+                </div>
+
+              </div>
+
+              <br>
+
+              <h4>
+                🚇 Case Journey
+              </h4>
+
+              <div class="timeline">
+
+                <div class="timeline-item">
+
+                  <span class="dot green-dot"></span>
+
+                  <div>
+
+                    <strong>
+                      Filing Submitted
+                    </strong>
+
+                    <br>
+
+                    ${filing.CreatedDT}
+
+                  </div>
+
+                </div>
+
+                ${
+                  defect
+                    ? `
+                  <div class="timeline-item">
+
+                    <span class="dot orange-dot"></span>
+
+                    <div>
+
+                      <strong>
+                        Defect Raised
+                      </strong>
+
+                      <br>
+
+                      ${defect.DefectRaiseDate}
+
+                    </div>
+
+                  </div>
+
+                  <div class="timeline-item">
+
+                    <span class="dot green-dot"></span>
+
+                    <div>
+
+                      <strong>
+                        Defect Cleared
+                      </strong>
+
+                      <br>
+
+                      ${defect.DefectRemovalDate}
+
+                    </div>
+
+                  </div>
+                  `
+                    : ""
+                }
+
+                ${
+                  filing.DisplayCaseNumber
+                    ? `
+                  <div class="timeline-item">
+
+                    <span class="dot blue-dot"></span>
+
+                    <div>
+
+                      <strong>
+                        Case Registered
+                      </strong>
+
+                      <br>
+
+                      ${filing.DisplayCaseNumber}
+
+                    </div>
+
+                  </div>
+                  `
+                    : ""
+                }
+
+              </div>
+
+              <br>
+
+              <div class="quick-insights">
+
+                <h4>
+                  📊 Quick Insights
+                </h4>
+
+                <br>
+
+                🎟 Token Number :
+                ${filing.TokenNumber}
+
+                <br><br>
+
+                📂 File Number :
+                ${filing.FileNumber}
+
+                <br><br>
+
+                ⚠ Defects Found :
+                ${defects.length}
+
+                <br><br>
+
+                👥 Total Parties :
+                ${
+                  parseInt(filing.TotalPetitioner || 0) +
+                  parseInt(filing.TotalRespondent || 0)
+                }
+
+              </div>
+
+              ${
+                defect
+                  ? `
+                <br>
+
+                <div class="remark-box">
+
+                  <strong>
+
+                    💬 Defect Remark
+
+                  </strong>
+
+                  <br><br>
+
+                  ${defect.Remark || "No Remarks"}
+
+                </div>
+                `
+                  : ""
+              }
+
+              <br>
+
+              <button
+                class="option-btn"
+                onclick="
+                  openFilingViewMore(
+                    '${filing.TokenNumber}'
+                  )
+                "
+              >
+                📋 View Complete Filing Details
+              </button>
+
+              <button
+                class="option-btn"
+                onclick="
+                  restartChat()
+                "
+              >
+                Another Query
+              </button>
+
+            </div>
+
+          `);
+    } catch (error) {
+      console.error(error);
+
+      addBotMessage("❌ Unable to fetch filing status.");
+    }
+  });
+
+  document.getElementById("backToken").addEventListener("click", restartChat);
 
   scrollBottom();
+}
+
+function openFilingViewMore(
+    tokenNumber
+) {
+
+    window.open(
+        "filing-view-more.html?tokenNumber="
+        + tokenNumber,
+        "_blank"
+    );
 }
 
 // API
@@ -695,48 +900,26 @@ loadCaseTypes().then(() => {
   startChat();
 });
 
-const chatLauncher =
-    document.getElementById("chatLauncher");
+const chatLauncher = document.getElementById("chatLauncher");
 
-const chatWidget =
-    document.getElementById("chatWidget");
+const chatWidget = document.getElementById("chatWidget");
 
-const maximizeBtn =
-    document.getElementById("maximizeBtn");
+const maximizeBtn = document.getElementById("maximizeBtn");
 
-const closeBtn =
-    document.getElementById("closeBtn");
+const closeBtn = document.getElementById("closeBtn");
 
-chatLauncher.addEventListener(
-    "click",
-    () => {
+chatLauncher.addEventListener("click", () => {
+  chatWidget.style.display = "block";
 
-        chatWidget.style.display =
-            "block";
+  chatLauncher.style.display = "none";
+});
 
-        chatLauncher.style.display =
-            "none";
-    }
-);
+closeBtn.addEventListener("click", () => {
+  chatWidget.style.display = "none";
 
-closeBtn.addEventListener(
-    "click",
-    () => {
+  chatLauncher.style.display = "block";
+});
 
-        chatWidget.style.display =
-            "none";
-
-        chatLauncher.style.display =
-            "block";
-    }
-);
-
-maximizeBtn.addEventListener(
-    "click",
-    () => {
-
-        chatWidget.classList.toggle(
-            "maximized"
-        );
-    }
-);
+maximizeBtn.addEventListener("click", () => {
+  chatWidget.classList.toggle("maximized");
+});

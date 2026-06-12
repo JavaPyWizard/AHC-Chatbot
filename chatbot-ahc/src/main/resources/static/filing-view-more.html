@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Filing Status Report</title>
+
+    <link rel="stylesheet"
+          href="css/filing-view-more.css">
+</head>
+
+<body>
+
+    <div class="report-container">
+
+        <div class="report-header">
+
+
+            <img
+                src="images/ahc-logo.png"
+                alt="AHC Logo">
+
+            <h1>
+                High Court of Judicature at Allahabad
+            </h1>
+
+            <h2>
+                Filing Status Report
+            </h2>
+
+            <div class="print-info">
+
+    Generated On:
+    <span id="printDate"></span>
+
+</div>
+
+        </div>
+
+        <div id="loadingContainer"
+             class="loading-container">
+
+            <div class="loader"></div>
+
+            <span>
+                Loading filing details...
+            </span>
+
+        </div>
+
+        <div id="timelineContainer"></div>
+
+        <div id="summaryCards"></div>
+
+        <div id="summaryContainer"></div>
+
+        <div id="defectContainer"></div>
+
+        <div class="two-column-layout">
+
+            <div id="filingContainer"></div>
+
+            <div id="partyContainer"></div>
+
+        </div>
+
+        <div class="bottom-actions">
+
+            <button
+    class="action-btn back-btn"
+    onclick="window.close()">
+
+                ← Back to Chat
+
+            </button>
+
+            <button
+                class="action-btn print-btn"
+                onclick="window.print()">
+
+                🖨 Print Report
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="js/filing-view-more.js"></script>
+
+</body>
+
+</html>
